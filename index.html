@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+</head>
+
+<body>
+
+    <!--aqui esta el contenedor del juego-->
+    <div id="machine-container">
+        <div id="machine">
+            <div class="leds">
+                <div class="leds-top">
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                </div>
+                <div class="leds-bottom">
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                    <div class="led"></div>
+                </div>
+            </div>
+            <div class="slot">
+                <div class="shadow-slot"></div><img src="./img/numero7.png" alt="" class="slot-img" id="">
+            </div>
+            <div class="slot">
+                <div class="shadow-slot"></div><img src="./img/numero7.png" alt="" class="slot-img" id="">
+            </div>
+            <div class="slot">
+                <div class="shadow-slot"></div><img src="./img/numero7.png" alt="" class="slot-img" id="">
+            </div>
+        </div>
+    </div>
+    <div class="message">
+        <p>PULSA!</p>
+    </div>
+    <div class="buttons">
+        <button class="button">
+            <div class="button-shadow"></div>
+        </button>
+    </div>
+    <!--audios del juego-->
+    <audio class="audio" src="./audio/casino.mp3"></audio>
+    <audio class="audio2"
+        src="https://pic.pikbest.com/17/96/46/77r888piCM2b.mp3"></audio>
+    <audio src="https://pic.pikbest.com/00/57/85/70V888piCTR3.mp3" class="audio3"></audio>
+    <audio src="https://pic.pikbest.com/00/36/80/30m888piCDQ5.mp3" class="audio4"></audio>
+    <!--Estado del jugador-->
+    <div id="status-container">
+        <div class="user">
+            <img src="https://pm1.narvii.com/7778/bffa46520ff78f45dd76360a107277b5b8ce333er1-736-736v2_00.jpg"
+                class="user-perfil">
+            <p class="name">Enrique Urdaneta</p>
+        </div>
+        <div class="coin-container">
+            <p class="coins">100</p>
+            <img src="https://www.flaticon.es/svg/static/icons/svg/4018/4018004.svg" class="coins-img">
+        </div>
+    </div>
+    <!--instrucciones-->
+    <button class="help-button">
+        <img src="https://www.flaticon.com/svg/static/icons/svg/682/682055.svg">
+    </button>
+    <div class="help-container filter">
+        <h2>Reglas del juego</h2>
+        <div class="help-section">
+            <div class="grid-item">
+                <h3>Como empezar?</h3>
+                <img src="./img/triple.png" alt="">
+                <p>pulse el boton que se encuentra en el centro para empezar a jugar, la maquina empezara a modificar
+                    sus valores de forma continua y solo puede detenerlo pulsandolo nuevamente</p>
+            </div>
+            <div class="grid-item">
+                <h3>Doble valor</h3>
+                <img src="./img/doble.png" alt="">
+                <div class="doble-valor-container">
+                    <div class="doble-valor-item">
+                        <img src="./img/cereza.png" alt="">
+                        <p>doble cereza: 10 pts</p>
+                    </div>
+                    <div class="doble-valor-item">
+                        <img src="./img/naranja.png" alt="">
+                        <p>doble naranja: 20 pts</p>
+                    </div>
+                    <div class="doble-valor-item">
+                        <img src="./img/numero7.png" alt="">
+                        <p>doble 7: 30 pts</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid-item">
+                <h3>Triple valor</h3>
+                <img src="./img/triple.png" alt="">
+                <div class="doble-valor-container">
+                    <div class="doble-valor-item">
+                        <img src="./img/cereza.png" alt="">
+                        <p>triple cereza: 100 pts</p>
+                    </div>
+                    <div class="doble-valor-item">
+                        <img src="./img/naranja.png" alt="">
+                        <p>triple naranja: 200 pts</p>
+                    </div>
+                    <div class="doble-valor-item">
+                        <img src="./img/numero7.png" alt="">
+                        <p>triple 7: 300 pts</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="help-quit">
+            X
+        </div>
+    </div>
+    <!--recargar-->
+    <div class="charge-container filter">
+        <div class="charge">
+            <img src="https://www.flaticon.es/svg/vstatic/svg/1080/1080424.svg?token=exp=1610427383~hmac=e711fdbddd9426c5b6dda8a6b37a223f">
+            <p>Ingrese el monto a recargar</p>
+            <div class="charge-inputText">
+                <input type="number" placeholder="Maxima recarga de 10.000!" value="">
+            </div>
+            <button class="charge-inputButton">
+                Recargar!
+            </button>
+        </div>
+        <div class="quit-charge">X</div>
+    </div>
+    <button class="charge-button">
+        <img src="https://www.flaticon.es/premium-icon/icons/svg/2757/2757456.svg">
+        Recargar
+    </button>
+    <div class="loader no-loader">
+        <div class="container-loader">
+            <p>RiquexCasino</p>
+            <img src="https://www.flaticon.es/svg/vstatic/svg/445/445076.svg?token=exp=1610490645~hmac=e43b4cf9b044def659e21884fee11dbf">
+        </div>
+    </div>
+</body>
+<script src="slotMachine.js"></script>
+
+</html>

@@ -1,0 +1,520 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Extra+Condensed:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans Extra Condensed', sans-serif;
+}
+
+body{
+    background: #161616;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    overflow: hidden;
+}
+
+#machine-container{
+    width: 700px;
+    height: 300px;
+    background-color: rgba(36, 228, 218, 0.863);
+    border-radius: 10px;
+    box-shadow: 6px 7px 10px rgba(0,0,0,0.2),
+    5px -1px 0px rgba(36, 228, 218, 0.637),
+    5px -7px 0px rgba(36, 228, 218, 0.637)
+    ;
+}
+
+
+#machine{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+#machine-container #machine .slot{
+    position: relative;
+    width: 200px;
+    height: 190px;
+    background-color: white;
+    margin: 30px;
+    border-radius: 15px;
+    box-shadow: 1px 2px 15px rgba(0,0,0,0.4) inset,
+    4px 5px 0px rgba(36, 228, 218, 0.699) inset ;
+    overflow: hidden;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+#machine-container #machine .slot .shadow-slot
+{
+    position: absolute;
+    width: 100%;
+    background:linear-gradient(to bottom, transparent, hsla(0, 0%, 0%, 0.548));
+    height: 50%;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+
+}
+#machine-container #machine .slot img{
+    width: 90%;
+    height: 80%;
+    object-fit: cover;
+}
+.buttons
+{
+
+    width: 450px;
+    height: 250px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button
+{
+    position: relative;
+    border: none;
+    outline: none;
+    width: 180px;
+    height: 70%;
+    border-radius: 15px;
+    box-shadow: 5px -2px 0px rgb(145, 144, 144),
+    4px 5px 0px rgb(145, 144, 144),
+    9px -4px 0px rgba(12, 12, 12,0.4),
+    8px 8px 0px rgb(12, 12, 12,0.4);
+    background-color: rgb(255, 255, 255);
+    color: rgb(12, 12, 12);
+    border-radius: 50%;
+    transition: all 0.12s;
+}
+.button:active{
+    box-shadow: 
+    5px -4px 0px rgba(12, 12, 12,0.4),
+    4px 8px 0px rgb(12, 12, 12,0.4),
+    -6px -4px 0px rgb(12, 12, 12,0.4),
+    -4px 10px 0px rgb(12, 12, 12,0.4)
+    
+    ;
+}
+.message
+{
+    margin-top: 10px;
+    color: white;
+    font-size:45px;
+    text-align: center;
+}
+
+
+/*perfil de usuario*/
+#status-container{
+    width: 250px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    margin: 15px;
+    flex-direction: column;
+}
+
+.user{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.user img{
+    width: 25%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user .name{
+    font-size: 20px;
+    color: white;
+    
+}
+
+.coin-container
+{
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.coin-container img{
+    width: 25%;
+    height: 60%;
+    margin-left: 3px;
+}
+
+.coin-container p{
+    font-size: 40px;
+    color: white;
+    border-bottom: 2px solid rgb(233, 214, 42);
+}
+
+.leds{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 5px;
+}
+
+.leds-bottom{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.leds-top{
+    width: 100%;
+    height: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.led{
+    background-color: rgb(238, 228, 135);
+    border-radius: 50%;
+    width: 3%;
+    height: 60%;
+    box-shadow: 2px 5px 10px rgb(230, 215, 81),
+    -1px 6px 2px rgba(0,0,0,0.4) inset;
+    margin: 3px;
+}
+
+.button-shadow{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background:linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.274));
+    z-index: 1;
+    top: 0;
+    left: 0;
+}
+
+.help-button
+{
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 5.7%;
+    height: 10%;
+    background-color: white;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    box-shadow: 2px 5px 2px rgb(173, 173, 173);
+    margin: 30px;
+    transition: all 0.12s;
+}
+
+.help-button:active
+{
+    box-shadow: 0;
+}
+.help-button:hover{
+    background-color: #333;
+    box-shadow: 2px 5px 2px rgb(68, 66, 66);
+}
+.help-button img{
+    width: 85%;
+    height: 80%;
+}
+.help-container
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 200;
+    background: hsla(0, 3%, 7%, 0.801);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transform: translateX(100%);
+    backdrop-filter: blur(10px);
+    
+}
+.help-container h2
+{
+    color: rgb(252, 252, 252);
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+.help-section{
+    width: 80%;
+    height: 60%;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 20px;
+}
+
+.grid-item{
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.5) ;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 15px;
+
+}
+
+.grid-item img{
+    width: 100%;
+    height: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 5px;
+}
+
+.grid-item p{
+    text-align: justify;
+}
+
+.grid-item h3{
+    color: rgba(36, 228, 218, 0.863);
+    font-size: 40px;
+    text-align: center;
+}
+
+.doble-valor-container
+{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.doble-valor-item{
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
+    height: 30%;
+}
+
+.doble-valor-item img{
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+}
+
+.doble-valor-item p{
+    font-size: 20px;
+    
+}
+
+.help-quit{
+    position: absolute;
+    font-size: 50px;
+    top: 0;
+    right:0;
+    color: white;
+    margin: 30px;
+    transition: all 0.12s;
+}
+
+.help-quit:hover{
+    color: rgb(64, 216, 76);
+    transform: scale(1.5);
+}
+
+/* recarga de fondos*/
+
+.charge-container{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: hsla(0, 3%, 7%, 0.801);
+    z-index: 34;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(10px);
+    -moz-backdrop-filter:blur(10px);
+    transform: translateX(-100%);
+   
+}
+
+.charge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60%;
+    height: 80%;
+}
+
+.charge img {
+    width:50%;
+    height: 50%;
+}
+
+.charge p{
+    font-size: 60px;
+    margin: 30px;
+    color: white;
+
+}
+
+.charge-inputText{
+    width: 50%;
+    height: 10%;
+}
+
+.charge-inputText input{
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline:none;
+    text-align: center;
+    font-size: 30px;
+    box-shadow: 0;
+    background: transparent;
+    transition: all 0.40s;
+    color: white;
+}
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+
+.charge-inputText input:focus
+{
+    box-shadow: 0px 5px 0px rgb(42, 226, 140);
+}
+.charge-inputButton{
+    border: none;
+    outline:none;
+    width: 20%;
+    height: 10%;
+    background-color:rgb(42, 226, 140);
+    margin-top: 30px ;
+    font-size: 30px;
+    
+}
+
+.quit-charge{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 30px;
+    color:white;
+    font-size: 50px;
+
+}
+
+.charge-button{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 30px;
+    width: 20%;
+    height: 90px;
+    background-color: transparent;
+    overflow: hidden;
+    padding: 10px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 30px;
+    border: none;
+    outline: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.20s;
+
+}
+
+.charge-button img{
+    width: 20%;
+    height: 80%;
+    margin-right: 20px;
+    transition: all 0.50s;
+}
+
+.charge-button:hover{
+    background-color: rgba(36, 228, 218, 0.479);
+    backdrop-filter: blur(20px);
+}
+
+.charge-button:hover img{
+    transform: rotate(360deg);
+}
+
+/* loader del juego*/
+
+.loader
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    z-index: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: circle(0.0% at 100% 100%);
+    transition: all 1.5s;
+}
+
+.container-loader{
+    width: 60%;
+    height: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-loader img{
+    margin: 10px;
+    width: 40%;
+    height: 40%;
+    animation: animacion 2s infinite linear;
+    filter: drop-shadow(3px 3px 0px rgb(179, 5, 5) );
+}
+
+.container-loader p{
+    font-size: 80px;
+    font-weight: bolder;
+}
+
+.no-loader{
+    clip-path: circle(141.4% at 100% 100%);
+}
+@keyframes animacion{
+    100%{
+        transform: rotate(360deg);
+    }
+}
